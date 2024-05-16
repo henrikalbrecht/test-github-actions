@@ -8,6 +8,8 @@ class Town:
 
     def __init__(self, name, residents):
         self.name = name
+        if residents < 0:
+            raise ValueError("Residents cannot be less than 0.")
         self.residents = residents
 
     @property
