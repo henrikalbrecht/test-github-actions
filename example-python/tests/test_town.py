@@ -63,10 +63,10 @@ class TestTown(unittest.TestCase):
 
         # constructor equals get
         t = Town(self.test_value1_name, -1)
-        self.assertFalse(t.residents < 0)
+        self.assertRaises(ValueError)
         # set equals get
         t.residents = -2
-        self.assertFalse(t.residents < 0)
+        self.assertRaises(ValueError)
 
     def test_town_str(self):
         """T04: Get correct town as human readable string"""
