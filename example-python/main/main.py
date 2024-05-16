@@ -1,6 +1,6 @@
 from town import Town
 
-
+# This is the main entry point of the program.
 def main():
     t = Town("Dresden", 556780)
     print(str(t))
