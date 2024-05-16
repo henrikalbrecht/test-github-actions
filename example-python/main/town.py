@@ -8,8 +8,6 @@ class Town:
 
     def __init__(self, name, residents):
         self.name = name
-        if residents < 0:
-            raise ValueError("Residents cannot be less than 0.")
         self.residents = residents
 
     @property
@@ -31,7 +29,13 @@ class Town:
 
     @residents.setter
     def residents(self, value):
-        self.__residents = value
+        # variant: min default value 0
+        self.__residents = 0 if value < 0 else value
+
+        # variant: exception
+        #if value < 0:
+        #    raise ValueError("residents must be equal or greater than 0")
+        #self.__residents = value
 
     def __str__(self):
         """Returns a human readable string of the object."""
